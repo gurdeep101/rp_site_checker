@@ -9,11 +9,11 @@ def read_user_cli_args():
         # program name
         prog="rp_site_checker",
         # text when called with --help option
-        description="check the availability of a URL"
+        description="check the availability of a URL",
     )
-    # add command line arguments for users to enter
+    # define new command line argument
     parser.add_argument(
-        # -u and --urls switches
+        # -u and --urls switches; long and short options
         "-u",
         "--urls",
         # name for argument
@@ -25,20 +25,29 @@ def read_user_cli_args():
         # no default values
         default=[],
         # message for user
-        help="enter one or more site URLs"
+        help="enter one or more site URLs",
     )
     
     # add url from files
     parser.add_argument(
-        # -f and --input-file are switches
+        # -f and --input-file are switches; long and short options
         "-f",
         "--input-file",
-        
+    
         metavar="FILE",
         type=str,
         default="",
         help="read URLs from a file",
     )
+    
+    parser.add_argument(
+        "-a",
+        "--asynchronous",
+        # boolean flags that set store True
+        action="store_true",
+        help="run connectivity check asynchronously",
+    )
+    
     # returns namespace object
     return parser.parse_args()
 

@@ -9,6 +9,7 @@ https://realpython.com/site-connectivity-checker-python/#step-4-put-everything-t
 * `http.client` module - provides `HTTPConnection` class which has `.request()` method
     * `.request()` method allows us to perform HTTP requests using different HTTP methods.
     * we use `HEAD` HTTP method. Returns only headers since we only want to check connectivity. This makes app efficient.
+* `urlparse` 2 parameters - url and seconds before timeout
 
 **App Construct**
 
